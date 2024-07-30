@@ -14,10 +14,9 @@ const Footer = () => {
             </div>
           </Link>
           <p>
-            3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
-            States
+            zakaria hadraoui
           </p>
-          <span className="font-semibold">hello@hekma.dev</span>
+          <span className="font-semibold">zakariahadraoui@thawab.dev</span>
           <span className="font-semibold">+1 234 567 890</span>
           <div className="flex gap-6">
             <Image src="/facebook.png" alt="" width={16} height={16} />
@@ -87,7 +86,7 @@ const Footer = () => {
       </div>
       {/* BOTTOM */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="">© 2024 Thawab</div>
+        <div className="">© 2024 zakaria hadraoui</div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="">
             <span className="text-gray-500 mr-4">Language</span>
