@@ -20,9 +20,8 @@ function ListPage() {
 		</div>
 		<Filter/>
 		<h1 className="mt-12 text-xl font-semibold">Shoes For You!</h1>
-        <ProductList
-          
-        />
+		<ProductList categID={process.env.FEATURED_CATEGORY_ID!} limit={4}/>
+
 
 	</div>
   )
