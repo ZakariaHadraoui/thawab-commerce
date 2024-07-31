@@ -5,8 +5,8 @@ function CustomizeProducts() {
 	<div className='flex flex-col gap-6'>
 		<h4 className='font-medium'>Choose a color</h4>
 		<ul className='flex items-center gap-4'>
-		<li
-                  className="w-8 h-8 rounded-full ring-1 bg-red-300 relative"
+		        <li
+                  className="w-8 h-8 rounded-full ring-1 bg-red-300 relative cursor-pointer"
                  
                   
                 >
@@ -15,10 +15,17 @@ function CustomizeProducts() {
                   
                  
                 </li>
+				<li className="w-8 h-8 rounded-full ring-1 bg-blue-500 relative cursor-pointer"></li>
+				<li className="w-8 h-8 rounded-full ring-1 bg-green-500 relative cursor-not-allowed">
+				<div className="absolute w-10 h-[2px] rounded-full bg-red-600  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45" />
+				</li>
 
 		</ul>
 		<h4 className='font-medium'>Choose a size</h4>
 		<ul className='flex items-center gap-4'>
+			<li className='ring-1 ring-zak text-zak rounded-md py-1 px-4 text-sm cursor-pointer'>Small</li>
+			<li className='ring-1 ring-zak text-white bg-zak rounded-md py-1 px-4 text-sm cursor-pointer'>Medium</li>
+			<li className='ring-1 ring-pink-200 text-white bg-pink-200 rounded-md py-1 px-4 text-sm cursor-not-allowed'>Larger</li>
 
 		</ul>
 
