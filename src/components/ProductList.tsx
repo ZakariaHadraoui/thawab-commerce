@@ -42,6 +42,7 @@ const ProductList = async ({
               sizes="25vw"
               className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
             />
+              {product.media?.items && (
               <Image
                 src={product.media?.items[1]?.image?.url || "/product.png"}
                 alt=""
@@ -49,6 +50,7 @@ const ProductList = async ({
                 sizes="25vw"
                 className="absolute object-cover rounded-md"
               />
+            )}
             
           </div>
           <div className="flex justify-between">
