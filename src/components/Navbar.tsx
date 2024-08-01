@@ -29,7 +29,7 @@ const Navbar = () => {
 		  <Image alt="thawab" src='/logg.png' height={100} width={100} objectFit="cover" />
 		  
           </Link>
-          <div className="hidden xl:flex gap-4 ">
+          <div className="hidden xl:flex gap-4 z-50">
             <Link href="/">Homepage</Link>
             <Link href="/list">Shop</Link>
             <Link href="/">Deals</Link>
