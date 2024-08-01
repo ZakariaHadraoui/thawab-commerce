@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WixClientContextProvider } from "@/context/wixContext";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +24,16 @@ export default function RootLayout({
         <meta name="google-site-verification" content="Ol1_JKT5UJTk5gEDKeldzGmTOQYjjhZBmHSZkQ30ULw" />
       </head>
       
-      <body className={inter.className}>
+      <body className='dark:bg-[#021526]' suppressHydrationWarning>
         <WixClientContextProvider>
+            <Providers>
+
             <Navbar/>
         
             {children}
 
             <Footer/>
+            </Providers>
 
         </WixClientContextProvider>
       

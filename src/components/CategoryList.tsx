@@ -45,7 +45,7 @@ function CategoryList() {
 			  className="object-cover"
 			/>
 		  </div>
-		  <h1 className="mt-8 font-light text-xl tracking-wide ml-4">
+		  <h1 className="mt-8 font-semibold text-3xl tracking-wide ml-4">
 			shoes
 		  </h1>
 		</Link>
@@ -61,7 +61,7 @@ function CategoryList() {
 			  className="object-cover"
 			/>
 		  </div>
-		  <h1 className="mt-8 font-light text-xl tracking-wide ml-4">
+		  <h1 className="mt-8 text-3xl font-light  tracking-wide ml-4 font-semibold">
 			shoes
 		  </h1>
 		</Link>
@@ -77,7 +77,7 @@ function CategoryList() {
 			  className="object-cover"
 			/>
 		  </div>
-		  <h1 className="mt-8 font-light text-xl tracking-wide ml-4">
+		  <h1 className="mt-8 font-light text-3xl tracking-wide ml-4 font-semibold">
 			shoes
 		  </h1>
 		</Link>

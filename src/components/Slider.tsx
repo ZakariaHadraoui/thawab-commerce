@@ -66,7 +66,7 @@ const Slider = () => {
             className={`${slide.bg} w-screen h-full flex flex-col xl:flex-row`}
           >
             {/* TEXT CONTAINER */}
-            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
+            <div className="h-1/2 xl:w-1/2 dark:bg-[#021526] xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
               <h2 className="text-xl lg:text-3xl 2xl:text-5xl">
                 {slide.description}
               </h2>
