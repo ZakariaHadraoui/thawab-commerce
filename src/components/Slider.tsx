@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
+
 
 const slides = [
   {
@@ -33,6 +39,11 @@ const slides = [
 
 const Slider = () => {
   const [current, setCurrent] = useState(0);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -44,14 +55,15 @@ const Slider = () => {
 
   return (
     <div className="h-[calc(100vh-80px)] overflow-hidden">
-      <div
-        className="w-max h-full flex transition-all ease-in-out duration-1000"
-        style={{ transform: `translateX(-${current * 100}vw)` }}
-      >
-        {slides.map((slide) => (
+    {domLoaded && <Swiper
+      pagination={{ dynamicBullets: true }}
+      modules={[Pagination]}
+      className="mySwiper h-full"
+    >
+      {slides.map((slide) => (
+        <SwiperSlide key={slide.id}>
           <div
-            className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
-            key={slide.id}
+            className={`${slide.bg} w-screen h-full flex flex-col xl:flex-row`}
           >
             {/* TEXT CONTAINER */}
             <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
@@ -62,40 +74,28 @@ const Slider = () => {
                 {slide.title}
               </h1>
               <Link href={slide.url}>
-                <button className="rounded-md bg-black text-white py-3 px-4 ">
-                  SHOP NOW
-                </button>
+                <Link href={'/'}>
+                  <button className="rounded-md bg-black text-white py-3 px-4">
+                    SHOP NOW
+                  </button>
+                </Link>
               </Link>
             </div>
             {/* IMAGE CONTAINER */}
             <div className="h-1/2 xl:w-1/2 xl:h-full relative">
               <Image
                 src={slide.img}
-                alt=""
+                alt={slide.title}
                 fill
                 sizes="100%"
                 className="object-cover"
               />
             </div>
           </div>
-        ))}
-      </div>
-      <div className="absolute m-auto left-56 bottom-8 flex gap-4 mr-24">
-        {slides.map((slide, index) => (
-          <div
-            className={`w-3 h-3    rounded-full ring-1 ring-zak cursor-pointer flex items-center justify-center ${
-              current === index ? "scale-150" : ""
-            }`}
-            key={slide.id}
-            onClick={() => setCurrent(index)}
-          >
-            {current === index && (
-              <div className="w-[6px] h-[6px] bg-gray-600 rounded-full"></div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>}
+  </div>
   );
 };
 
