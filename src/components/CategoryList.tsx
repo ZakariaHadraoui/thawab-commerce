@@ -18,8 +18,6 @@ function CategoryList() {
 	<Swiper
 	  slidesPerView={1} 
 	  spaceBetween={20}
-	  pagination={{ clickable: true }}
-	  modules={[Pagination]}
 	  breakpoints={{
 		
 		640: { 
