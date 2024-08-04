@@ -9,11 +9,10 @@ const PRODUCT_PER_PAGE = 10;
 const ProductList = async ({
   categID,
   limit,
-  searchParams
+  
   } : {
   
     categID:string ;
-    searchParams:any;
     limit?:number ;
   }) => {
 
