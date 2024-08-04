@@ -10,7 +10,7 @@ async function ListPage(
 ) {
 	const cat =searchParams.cat
 	const wixClient = await wixClientServer()
-	
+
 	const category = await wixClient.collections.getCollectionBySlug(
 		searchParams.cat || "all-products"
 	  );
@@ -36,7 +36,7 @@ async function ListPage(
           categID={
             category.collection?._id || "00000000-000000-000000-000000000001"
           }
-          searchParams={searchParams}
+          
         />
 		</Suspense>
 
