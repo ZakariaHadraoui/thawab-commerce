@@ -8,15 +8,21 @@ const PRODUCT_PER_PAGE = 10;
 
 const ProductList = async ({
   categID,
-  limit
+  limit,
+  searchParams
   } : {
   
     categID:string ;
+    searchParams:any;
     limit?:number ;
   }) => {
 
     const wixClient = await wixClientServer();
-    const res =  await wixClient.products.queryProducts().eq("collectionIds","6a0f27ec-4b64-1fc6-7b1d-a67bec497657").limit(limit || PRODUCT_PER_PAGE).find();
+    const res =  await wixClient.products
+    .queryProducts()
+    .eq("collectionIds",categID)
+    .limit(limit || PRODUCT_PER_PAGE)
+    .find();
     console.log(res.items);
     
 
@@ -59,8 +65,12 @@ const ProductList = async ({
           </div>
             <div
               className="text-sm text-gray-500"
+              dangerouslySetInnerHTML={{__html: product.description}}
+
+
+
               
-            >{product.description}</div>
+            />
           
           <button className="rounded-2xl ring-1 transition-all easy duration-500   ring-zak text-zak w-max py-2 px-4 text-xs hover:bg-zak hover:text-white">
             Add to Cart

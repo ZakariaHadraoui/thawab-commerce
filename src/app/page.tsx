@@ -1,8 +1,15 @@
 import CategoryList from "@/components/CategoryList"
-import ProductList from "@/components/ProductList"
 import Slider from "@/components/Slider"
 import { wixClientServer } from "@/lib/WixClientServer"
 import { Suspense } from "react"
+import dynamic from "next/dynamic"
+
+
+
+const ProductList = dynamic(() => import('@/components/ProductList'), {
+  ssr: false,
+});
+
 
 const HomePage = async() => {
   
@@ -27,7 +34,7 @@ const HomePage = async() => {
       <h1 className="text-2xl">Featured Products</h1>
 
        <Suspense fallback={'loading '}>
-         <ProductList categID={process.env.FEATURED_CATEGORY_ID!} limit={4}/>
+         <ProductList categID={process.env.FEATURED_CATEGORY_ID!} limit={6}/>
        </Suspense>
 
       </div>
@@ -40,7 +47,9 @@ const HomePage = async() => {
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
       <h1 className="text-2xl mb-12 px-4">New products</h1>
 
-      <ProductList categID={process.env.FEATURED_CATEGORY_ID!} limit={4}/>
+      <Suspense fallback={'loading '}>
+         <ProductList categID={process.env.FEATURED_CATEGORY_ID!} limit={6}/>
+       </Suspense>
 
 
       </div>

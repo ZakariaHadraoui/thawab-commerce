@@ -7,7 +7,7 @@ function Filter() {
 	  <select
 		name="type"
 		id=""
-		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED] dark:bg-[#1A1A1A] cursor-pointer"
 	  >
 		<option>Type</option>
 		<option value="physical">Physical</option>
@@ -23,12 +23,12 @@ function Filter() {
 		type="text"
 		name="max"
 		placeholder="max price"
-		className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400"
+		className="text-xs rounded-2xl pl-2 w-24 ring-1 ring-gray-400 "
 	  />
 	  {/* TODO: Filter Categories */}
 	  <select
 		name="cat"
-		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED] dark:bg-[#1A1A1A]"
 	  >
 		<option>Category</option>
 		<option value="">New Arrival</option>
@@ -37,7 +37,7 @@ function Filter() {
 	  <select
 		name=""
 		id=""
-		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED]"
+		className="py-2 px-4 rounded-2xl text-xs font-medium bg-[#EBEDED] dark:bg-[#1A1A1A] cursor-pointer"
 	  >
 		<option>All Filters</option>
 	  </select>
@@ -46,7 +46,7 @@ function Filter() {
 	  <select
 		name="sort"
 		id=""
-		className="py-2 px-4 rounded-2xl text-xs font-medium bg-white ring-1 ring-gray-400"
+		className=" cursor-pointer py-2 px-4 rounded-2xl text-xs font-medium bg-white ring-1 ring-gray-400 dark:bg-[#1A1A1A]"
 	  >
 		<option>Sort By</option>
 		<option value="asc price">Price (low to high)</option>
