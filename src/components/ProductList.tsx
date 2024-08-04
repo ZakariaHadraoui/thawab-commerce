@@ -64,7 +64,9 @@ const ProductList = async ({
           </div>
             <div
               className="text-sm text-gray-500"
-              dangerouslySetInnerHTML={{__html: product.description}}
+              dangerouslySetInnerHTML={{
+                __html: product.description ? product.description : '',
+              }}
 
 
 
