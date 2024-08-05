@@ -6,7 +6,7 @@ import React, { Suspense } from 'react'
 
 
 
-export async function generateMetadata({ searchParams }) {
+export async function generateMetadata({ searchParams }:{searchParams : any}) {
 	const cat = searchParams.cat;
 	const wixClient = await wixClientServer();
 	const category = await wixClient.collections.getCollectionBySlug(

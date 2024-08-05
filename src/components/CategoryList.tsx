@@ -4,9 +4,13 @@ import Link from "next/link";
 
 
 
+interface Params {
+	slug: string;
+	
+  }
+  
 
-
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async ({ params }:{params:Params}) => {
 	const wixClient = await wixClientServer();
   
 	const cats = await wixClient.collections.queryCollections().find();

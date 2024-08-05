@@ -7,7 +7,7 @@ import React from 'react'
 
 
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }:{params:any}) {
 	const wixClient = await wixClientServer();
 	const products = await wixClient.products.queryProducts().find();
   
