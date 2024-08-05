@@ -4,6 +4,23 @@ import { wixClientServer } from '@/lib/WixClientServer'
 import Image from 'next/image'
 import React, { Suspense } from 'react'
 
+
+
+export async function generateMetadata({ searchParams }) {
+	const cat = searchParams.cat;
+	const wixClient = await wixClientServer();
+	const category = await wixClient.collections.getCollectionBySlug(
+	  searchParams.cat || "all-products"
+	);
+  
+	return {
+	  title: `${cat} For You! - Discount up to 50% on new products`,
+	  description: `Get a discount up to 50% on new products in the ${cat} category.`,
+	  keywords: [cat, "discount thawab shop maroc", "new products"],
+	 
+	};
+  }
+
 async function ListPage(
   {searchParams}:{searchParams : any}
 

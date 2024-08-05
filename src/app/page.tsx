@@ -3,12 +3,21 @@ import Slider from "@/components/Slider"
 import { wixClientServer } from "@/lib/WixClientServer"
 import { Suspense } from "react"
 import dynamic from "next/dynamic"
+import { Metadata } from "next"
 
 
 
 const ProductList = dynamic(() => import('@/components/ProductList'), {
   ssr: false,
 });
+
+
+
+export const metadata: Metadata = {
+  title: "Thawab shop maroc ",
+  description: " Discover new collections of products in thawab shop  ",
+};
+
 
 
 const HomePage = async() => {

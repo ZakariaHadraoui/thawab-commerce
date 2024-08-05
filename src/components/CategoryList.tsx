@@ -2,6 +2,24 @@ import { wixClientServer } from "@/lib/WixClientServer";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
+
+
+export const generateMetadata = async ({ params }) => {
+	const wixClient = await wixClientServer();
+  
+	const cats = await wixClient.collections.queryCollections().find();
+	const metadata = cats.items.map((cat) => {
+	  return {
+		title: cat.name,
+		
+	  };
+	});
+  
+	return metadata;
+  };
+
 const CategoryList = async () => {
   const wixClient = await wixClientServer();
 

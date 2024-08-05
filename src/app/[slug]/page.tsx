@@ -1,8 +1,29 @@
 import Add from '@/components/Add'
 import CustomizeProducts from '@/components/CustomizeProducts'
 import ProductImages from '@/components/ProductImages'
+import { wixClientServer } from '@/lib/WixClientServer'
 import { useParams } from 'next/navigation'
 import React from 'react'
+
+
+
+export async function generateMetadata({ params }) {
+	const wixClient = await wixClientServer();
+	const products = await wixClient.products.queryProducts().find();
+  
+	const product = products.items.find((product) => product.slug === params.slug);
+  
+	if (!product) {
+	  return {
+		title: 'Product not found',
+	  };
+	}
+  
+	return {
+	  title: product.name,
+	 
+	};
+  }
 
 function SinglePage() {
 	
