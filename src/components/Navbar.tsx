@@ -1,36 +1,72 @@
-import Link from "next/link";
-import Image from "next/image";
-import dynamic from "next/dynamic";
-import Menu from "./Menu";
-import SearchBar from "./SearchBar";
-import NavIcons from "./NavIcons";
+"use client"
+import Link from 'next/link'
+import React, { useEffect } from 'react'
+import $ from 'jquery'
 
-// import NavIcons from "./NavIcons";
-
-
-const Navbar = () => {
+function Navbar() {
+  
+  
   return (
-    <div className="h-20 bg-white dark:bg-[#021526] dark:text-white px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
-      {/* MOBILE */}
-     
-      {/* BIGGER SCREENS */}
-      <div className=" flex items-center justify-between gap-8 h-full">
-        {/* LEFT */}
-        <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
-          <Link href="/" className="flex items-center gap-3">
-		  <Image alt="thawab" src='/logg.png' height={100} width={100} objectFit="cover" />
-		  
-          </Link>
-          
-        </div>
-        {/* RIGHT */}
-        <div className=" md:ml-4 w-2/3 xl:w-1/2 flex items-center justify-between gap-8">
-          <SearchBar/>
-		      <NavIcons/>
-        </div>
+<>
+  {/* ==================== Start progress-scroll-button ==================== */}
+  <div className="progress-wrap cursor-pointer">
+    <svg
+      className="progress-circle svg-content"
+      width="100%"
+      height="100%"
+      viewBox="-1 -1 102 102"
+    >
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  {/* ==================== End progress-scroll-button ==================== */}
+  {/* ==================== Start Navbar ==================== */}
+  <nav className="navbar navbar-expand-lg">
+    <div className="container">
+      {/* Logo */}
+      <Link className="logo  " href="#">
+        ZakSolutions
+      </Link>
+      {/* navbar links */}
+      {/* <div className="  navbar-collapse" >
+        <ul className="navbar-nav px-4">
+          <div className="nav-item mx-4 my-2">
+            <Link className="nav-link active" href="#">
+              About Us
+            </Link>
+          </div>
+          <div className="nav-item my-2">
+            <Link className="nav-link active" href="#">
+              Contact
+            </Link>
+          </div>
+        
+         
+        </ul>
       </div>
+      <div className="topnav d-flex align-items-center justify-content-center">
+        <Link
+          href="https://uithemez.com/i/hubfolio_HTML/inner_pages/contact.html"
+          className="butn butn-rounded"
+        >
+          <div className="d-flex align-items-center justify-content-center">
+            <span className='text-center'>Start Project</span>
+            <span className="icon ml-10">
+              <img
+                src="https://uithemez.com/i/hubfolio_HTML/common/imgs/icons/arrow-top-right.svg"
+                alt=""
+              />
+            </span>
+          </div>
+        </Link>
+       
+      </div> */}
     </div>
-  );
-};
+  </nav>
+  
 
-export default Navbar;
+</>
+  )
+}
+
+export default Navbar
