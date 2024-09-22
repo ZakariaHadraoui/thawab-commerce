@@ -108,7 +108,7 @@ const HomePage = async() => {
     </div>
   </div>
 </header>
-<Intro/>
+{/* <Intro/> */}
     </div>
 
   )
